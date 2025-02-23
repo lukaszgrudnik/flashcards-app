@@ -2,7 +2,7 @@ name: Pre-merge actions
 run-name: Code validation by ${{ github.actor }} before merging to main
 on:
   pull_request:
-    types: [opened, synchronize,
+    types: [opened, synchronize, closed]
     branches:
       - main
 jobs:
