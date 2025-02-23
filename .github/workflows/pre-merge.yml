@@ -1,19 +1,25 @@
 name: Pre-merge actions
 run-name: Code validation by ${{ github.actor }} before merging to main
 on: [pull_request]
+
 jobs:
   Lint:
     runs-on: ubuntu-latest
     steps:
+      # Checkout the code
+      - name: Checkout code
+        uses: actions/checkout@v3
+
       # Set up Node.js
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '16'  # Specify the Node.js version
+          node-version: '22.13.0'  # Specify the Node.js version
 
-      # Install the Angular CLI and lint package
+      # Install dependencies (Angular CLI and others)
       - name: Install Angular CLI and lint dependencies
         run: npm install
+
       # Run the Angular linting command
       - name: Run ng lint
         run: ng lint  # Run the Angular linting task
