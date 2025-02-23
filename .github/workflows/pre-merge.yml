@@ -13,10 +13,7 @@ jobs:
 
       # Install the Angular CLI and lint package
       - name: Install Angular CLI and lint dependencies
-        run: |
-          npm install -g @angular/cli  # Install Angular CLI globally
-          npm install @angular-eslint/schematics  # Install Angular linting package
-
+        run: npm install
       # Run the Angular linting command
       - name: Run ng lint
         run: ng lint  # Run the Angular linting task
