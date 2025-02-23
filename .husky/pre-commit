@@ -1,0 +1,8 @@
+# Run Prettier to format files
+npx prettier . --write
+
+# Stage files that were modified by Prettier
+git add .
+
+# Run Angular lint
+ng lint
